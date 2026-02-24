@@ -1,0 +1,65 @@
+{
+  "name": "@faerscope/opencore",
+  "version": "0.1.0",
+  "description": "Open-source pharmacovigilance opencore library for FDA FAERS adverse-event signal detection via the openFDA API. Provides disproportionality analysis (PRR, ROR, IC), Benjamini-Hochberg FDR correction, time-series spike detection, MedDRA SOC mapping, and reproducible session manifests.",
+  "license": "Apache-2.0",
+  "author": "FAERScope Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FAERScope/opencore.git"
+  },
+  "homepage": "https://github.com/FAERScope/opencore#readme",
+  "bugs": {
+    "url": "https://github.com/FAERScope/opencore/issues"
+  },
+  "keywords": [
+    "pharmacovigilance",
+    "faers",
+    "fda",
+    "openfda",
+    "adverse-events",
+    "signal-detection",
+    "disproportionality",
+    "prr",
+    "ror",
+    "information-component",
+    "drug-safety",
+    "meddra",
+    "epidemiology"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false
+}
